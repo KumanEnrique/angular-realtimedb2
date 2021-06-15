@@ -1,0 +1,23 @@
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>CATEGORY</th>
+            <th>LOCATION</th>
+            <th>PRICE</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productsArray">
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.location}}</td>
+            <td>{{product.price}}</td>
+            <td>
+                <button class="btn btn-warning" (click)="deleteProduct(product.$key)">delete <i class="fa fa-trash" aria-hidden="true"></i></button>
+                <button class="btn btn-success" (click)="updateProduct(product)">update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
